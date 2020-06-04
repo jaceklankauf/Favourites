@@ -1,15 +1,23 @@
 import React from 'react';
-import Button from 'components/Button';
-import GlobalStyle from '../../theme/GlobalStyle';
+import { ThemeProvider } from 'styled-components';
+import Button from 'components/atoms/Button/Button';
+import GlobalStyle from 'theme/GlobalStyle';
+import { theme } from 'theme/mainTheme';
+import Input from 'components/atoms/Input/Input';
 
 const Root = () => (
   <div>
     <GlobalStyle />
-    <h1>Hello fuckin world</h1>
-    <Button>close / save</Button>
-    <Button secondary width="105px">
-      remove
-    </Button>
+    <ThemeProvider theme={theme}>
+      <>
+        <h1>Hello fuckin world</h1>
+        <Button>close / save</Button>
+        <Button secondary width="105px">
+          remove
+        </Button>
+        <Input search placeholder="search" />
+      </>
+    </ThemeProvider>
   </div>
 );
 
